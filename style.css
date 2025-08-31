@@ -1,0 +1,1647 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* HEADER BASE */
+.header {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+.header__logo-image {
+    width: 3.2rem;
+
+}
+
+.header__logo-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* BOTÓN HAMBURGUESA */
+.header__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.header__toggle-line {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* MENÚ */
+.header__nav-list {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    display: none;
+    padding: 1rem 0;
+}
+
+.header__nav-item {
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.header__nav-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* LÓGICA: mostrar menú activo */
+.header__nav-list.active {
+    display: flex;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .header__toggle {
+        display: none;
+    }
+
+    .header__nav {
+        padding: 0;
+        justify-content: space-evenly;
+    }
+
+    .header__nav-list {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        width: auto;
+        padding: 0;
+        height: 70px;
+        color: #ffffff;
+
+    }
+
+
+    .header__nav-item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        background-color: #333;
+    }
+
+    .header__nav-item--highlight {
+        background-color: #ffaa00;
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+.hero {
+    position: relative;
+    /* Para posicionar el overlay y el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    /* Altura mínima para móviles */
+    text-align: center;
+    color: #fff;
+    /* Color de texto por defecto */
+    background-image: url('assets/general_images/hero_background.png');
+    /* Placeholder de imagen de fondo para móvil */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /* Scroll por defecto en móvil */
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Capa oscura semi-transparente */
+    z-index: 1;
+    /* Asegura que esté sobre la imagen de fondo pero debajo del contenido */
+}
+
+.hero__content {
+    position: relative;
+    /* Para que el contenido esté sobre el overlay */
+    z-index: 2;
+    padding: 0 0 100px 0;
+    /* Padding para móviles */
+    max-width: 90%;
+    /* Ancho máximo para el contenido en móvil */
+}
+
+.hero__icon {
+    font-size: 3em;
+    /* Tamaño del bigote para móvil */
+    color: #fff;
+    /* Color blanco */
+    margin-bottom: 20px;
+}
+
+.hero__title {
+    font-size: 2em;
+    /* Tamaño del título para móvil */
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.hero__highlight-text {
+    color: #ffaa00;
+    /* Color naranja para "PERFECT BEARD" */
+}
+
+.hero__subtitle {
+    font-size: 1em;
+    /* Tamaño del subtítulo para móvil */
+    color: #ccc;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.default__button {
+    background: linear-gradient(to right, #ffaa00, #e08e00);
+    /* Degradado naranja */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    /* Padding para el botón en móvil */
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    /* Para que el padding y background funcionen bien */
+}
+
+.hero__button:hover {
+    background: linear-gradient(to right, #e08e00, #ffaa00);
+    /* Degradado inverso al hover */
+}
+
+/* --- Media Queries (Mobile-First) --- */
+
+/* Pantallas medianas (ej. tabletas - 768px y más grandes) */
+@media (min-width: 768px) {
+    .hero {
+        min-height: 300px;
+        /* Altura para tabletas */
+        background-image: url('assets/general_images/hero_background.png');
+        /* Imagen de fondo de mayor resolución */
+        background-attachment: fixed;
+        /* Fondo fijo al hacer scroll */
+    }
+
+    .hero__icon {
+        font-size: 4em;
+        /* Tamaño del bigote para tabletas */
+    }
+
+    .hero__title {
+        font-size: 3em;
+        /* Tamaño del título para tabletas */
+    }
+
+    .hero__subtitle {
+        font-size: 1.2em;
+        /* Tamaño del subtítulo para tabletas */
+    }
+
+    .hero__button {
+        padding: 15px 30px;
+        /* Más padding para el botón */
+        font-size: 1.1em;
+    }
+}
+
+/* Pantallas grandes (ej. escritorios - 992px y más grandes) */
+@media (min-width: 992px) {
+    .hero {
+        min-height: 300px;
+        /* Altura para escritorio */
+        background-image: url('assets/general_images/hero_background.png');
+        /* Imagen de fondo de máxima resolución */
+    }
+
+    .hero__icon {
+        font-size: 5em;
+        /* Tamaño del bigote para escritorio */
+    }
+
+    .hero__title {
+        font-size: 4em;
+        /* Tamaño del título para escritorio */
+        margin-bottom: 20px;
+    }
+
+    .hero__subtitle {
+        font-size: 1.4em;
+        /* Tamaño del subtítulo para escritorio */
+        margin-bottom: 40px;
+    }
+
+    .hero__button {
+        padding: 18px 40px;
+        /* Más padding para el botón */
+        font-size: 1.2em;
+    }
+}
+
+
+/* --- SECCIÓN ABOUT US (Mobile-First) --- */
+.about {
+
+    background-color: #2b2b2b;
+    /* Fondo oscuro */
+    color: #f0f0f0;
+    /* Color de texto general */
+    padding: 5px 20px;
+    /* Padding para móviles */
+    text-align: center;
+    /* Centrar el texto por defecto */
+
+    background-image: url('assets/general_images/grayBack.png');
+    /* Placeholder de imagen de fondo para móvil */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.about__header {
+    margin-top: 42px;
+    position: relative;
+    padding-bottom: 20px;
+    /* Espacio para las líneas */
+}
+
+/* Líneas decorativas para el encabezado */
+
+
+
+.about__title {
+    font-size: 2.6em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about__subtitle {
+    font-size: 0.9em;
+    color: #ffaa00;
+    /* Naranja */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about__cards {
+    display: flex;
+    flex-direction: column;
+    /* Apilar tarjetas en móvil */
+    flex-flow: column-reverse;
+    gap: 30px;
+    /* Espacio entre tarjetas */
+    max-width: 900px;
+    /* Ancho máximo para el contenido en el centro */
+    margin: 0 auto;
+    align-items: center;
+    
+
+}
+
+.about__card {
+    padding: 5px;
+    text-align: left;
+    /* Alineación del texto dentro de la tarjeta */
+
+}
+
+.about__image {
+    width: 100%;
+    /* se ajusta al contenedor */
+    height: auto;
+    /* mantiene la proporción */
+    max-width: 600px;
+    /* opcional: para que no se agrande demasiado */
+    object-fit: contain;
+}
+
+.about__card--image {
+    display: flex;
+    justify-content: center;
+}
+
+.about__text {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.about__button {
+    background: linear-gradient(to right, #ffaa00, #e08e00);
+    /* Degradado naranja */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    /* Para que el padding y background funcionen bien */
+}
+
+.about__button:hover {
+    background: linear-gradient(to right, #e08e00, #ffaa00);
+}
+
+/* --- SECCIÓN OUR SERVICES (Mobile-First) --- */
+.services {
+    background-color: #2b2b2b;
+    /* Fondo oscuro, similar a About Us */
+    color: #f0f0f0;
+    padding: 60px 20px;
+    /* Padding para móviles */
+    text-align: center;
+
+    background-image: url('assets/general_images/background_3.png');
+    /* Placeholder de imagen de fondo para móvil */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.services__header, .team__header, .facts__header {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+
+.services__title, .team__title, .facts__title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    /* Para alinear el icono y el texto */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* Espacio entre el icono y el texto */
+}
+
+.services__title .fa-mustache {
+    /* Estilo específico para el icono del bigote en el título */
+    color: #ffaa00;
+    /* Naranja */
+    font-size: 1em;
+    /* Misma altura que el texto */
+}
+
+
+.services__subtitle, .team__subtitle, .facts__subtitle {
+    font-size: 0.9em;
+    color: #ffaa00;
+    /* Naranja */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.services__list {
+    display: flex;
+    flex-direction: column;
+    /* Apilar tarjetas en móvil */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+    max-width: 1000px;
+    /* Ancho máximo para el contenido en el centro */
+    margin: 0 auto;
+}
+
+.services__card {
+    background-color: #000000;
+    /* Fondo ligeramente más claro para las tarjetas */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    /* Ajustes para el hover de la tarjeta */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services__card:hover {
+    transform: translateY(-5px);
+    /* Pequeño levantamiento */
+    background-color: #4a4a4a;
+    /* Ligero cambio de color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Sombra más pronunciada */
+}
+
+.services__icon {
+    font-size: 3.5em;
+    /* Tamaño de icono grande */
+    color: #ffaa00;
+    /* Naranja */
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.services__card:hover .services__icon {
+    color: #fff;
+    /* Icono blanco al pasar el mouse sobre la tarjeta */
+}
+
+.services__card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.services__card-description {
+    font-size: 0.85em;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+
+/* --- MEDIA QUERIES (Mobile-First) --- */
+
+/* Tabletas y Escritorio pequeño (768px y más) */
+@media (min-width: 768px) {
+    .about {
+        padding: 5px 30px;
+    }
+
+    .about__title {
+        font-size: 2.8em;
+    }
+
+    .about__subtitle {
+        font-size: 1em;
+    }
+
+    .about__cards {
+        flex-direction: row;
+        /* Diseño en fila para tabletas */
+        justify-content: center;
+        align-items: flex-start;
+        /* Alinea las tarjetas en la parte superior */
+        gap: 40px;
+        /* Mayor espacio entre tarjetas */
+    }
+
+    .about__card {
+        flex: 1;
+        /* Ocupa el espacio disponible */
+        max-width: 45%;
+        /* Limita el ancho para que no se extiendan demasiado */
+        padding: 30px 30px 0 30px;
+    }
+
+    .about__image {
+        height: 250px;
+        /* Altura ajustada para tabletas */
+
+    }
+
+    .about__text {
+        font-size: 1.05em;
+    }
+
+    .services {
+        padding: 80px 30px;
+    }
+
+    .services__title, .team__title, .facts__title {
+        font-size: 2.8em;
+    }
+
+    .services__subtitle, .team__subtitle, .facts__subtitle {
+        font-size: 1em;
+    }
+
+    .services__list {
+        flex-direction: row;
+        /* Mostrar en 2 columnas */
+        flex-wrap: wrap;
+        /* Permitir que las tarjetas se envuelvan */
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .services__card {
+        flex: 1 1 calc(50% - 30px);
+        /* 2 columnas, con espacio */
+        max-width: calc(50% - 30px);
+        padding: 40px 25px;
+    }
+
+    .services__icon {
+        font-size: 4em;
+    }
+
+    .services__card-title {
+        font-size: 1.3em;
+    }
+}
+
+/* Escritorio (992px y más) */
+@media (min-width: 992px) {
+    .about {
+        padding: 5px 40px;
+    }
+
+    .about__title {
+        font-size: 3.5em;
+    }
+
+    .about__subtitle {
+        font-size: 1.1em;
+    }
+
+    .about__card {
+        max-width: 400px;
+        /* Ancho fijo para mantener el tamaño de las tarjetas */
+    }
+
+    .about__image {
+        height: 300px;
+        /* Altura ajustada para escritorio */
+    }
+
+    .about__text {
+        font-size: 1.1em;
+    }
+
+    .services {
+        padding: 100px 40px 30px 40px;
+    }
+
+    .services__title, .team__title, .facts__title {
+        font-size: 3.5em;
+    }
+
+    .services__subtitle, .team__subtitle, .facts__subtitle {
+        font-size: 1.1em;
+    }
+
+    .services__list {
+        flex-direction: row;
+        /* Mantener en fila */
+        flex-wrap: nowrap;
+        /* Evitar que se envuelva para 4 columnas */
+        gap: 30px;
+    }
+
+    .services__card {
+        flex: 1 1 200px;
+        /* Base flexible para 4 columnas */
+        max-width: calc(25% - 22.5px);
+        /* 4 columnas, con espacio */
+        padding: 30px 30px;
+    }
+
+    .services__icon {
+        font-size: 4.5em;
+    }
+
+    .services__card-title {
+        font-size: 1.4em;
+    }
+}
+
+/* --- VARIABLES GLOBALES (Recomendado para colores, etc.) --- */
+:root {
+    --primary-orange: #ffaa00;
+    --dark-orange: #e08e00;
+    --dark-bg: #2b2b2b;
+    /* Fondo oscuro principal */
+    --card-bg: #3b3b3b;
+    /* Fondo ligeramente más claro para tarjetas */
+    --text-light: #f0f0f0;
+    /* Texto claro */
+    --text-medium: #ccc;
+    /* Texto gris medio */
+    --text-dark: #333;
+    /* Texto oscuro */
+}
+
+/* --- VARIABLES GLOBALES (Recomendado para colores, etc.) --- */
+:root {
+    --primary-orange: #ffaa00;
+    --dark-orange: #e08e00;
+    --dark-bg: #2b2b2b;
+    /* Fondo oscuro principal */
+    --card-bg: #3b3b3b;
+    /* Fondo ligeramente más claro para tarjetas */
+    --text-light: #f0f0f0;
+    /* Texto claro */
+    --text-medium: #ccc;
+    /* Texto gris medio */
+    --text-dark: #333;
+    /* Texto oscuro */
+}
+
+/* RESET Básico (Mantén tu normalizer.css o reset completo aparte) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* Usé Arial como un genérico, ajusta a la fuente de la imagen */
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* --- ESTILOS GENERALES PARA BOTONES Y TÍTULOS (Reutilizables de antes) --- */
+.primary-button {
+    background: linear-gradient(to right, var(--primary-orange), var(--dark-orange));
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.primary-button:hover {
+    background: linear-gradient(to right, var(--dark-orange), var(--primary-orange));
+}
+
+.section-header {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.section-header::before,
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--primary-orange);
+    width: 40px;
+}
+
+.section-header::before {
+    left: 50%;
+    transform: translateX(-100%) translateX(-10px);
+}
+
+.section-header::after {
+    right: 50%;
+    transform: translateX(100%) translateX(10px);
+}
+
+.section-title {
+    font-size: 2.2em;
+    /* Mobile-first base */
+    font-weight: bold;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 0.9em;
+    /* Mobile-first base */
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* --- SECCIÓN OUR TEAM (Mobile-First) --- */
+.team {
+    background-image: url('assets/general_images/background_3.png');
+    /* Fondo de la sección */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: var(--dark-bg);
+    /* Fallback */
+    color: var(--text-light);
+    padding: 60px 20px;
+    /* Padding móvil */
+    text-align: center;
+}
+
+.team__list {
+    display: flex;
+    flex-direction: column;
+    /* Apilar en móvil */
+    gap: 30px;
+    /* Espacio entre miembros */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.team__member {
+    background-color: var(--card-bg);
+    /* Fondo de la tarjeta del miembro */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Para el punto activo/inactivo */
+}
+
+.team__photo {
+    width: 120px;
+    /* Tamaño de la foto de perfil */
+    height: 120px;
+    border-radius: 50%;
+    /* Circular */
+    object-fit: cover;
+    border: 3px solid var(--primary-orange);
+    /* Borde naranja */
+    padding: 3px;
+    /* Espacio entre la imagen y el borde */
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 5px rgba(255, 170, 0, 0.3);
+    /* Sombra exterior como en la imagen */
+}
+
+.team__name {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.team__role {
+    font-size: 0.9em;
+    color: var(--primary-orange);
+    /* Rol en naranja */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Puntos de navegación/indicadores debajo de los miembros (simulación para desktop) */
+.team__list::after {
+    content: '';
+    /* No hay puntos en mobile, los agregaremos en desktop */
+    display: none;
+}
+
+
+/* --- SECCIÓN PARTNERS (Mobile-First) --- */
+.partners {
+    background-color: var(--primary-orange);
+    /* Fondo naranja para esta sección */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.partners__list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los logos se envuelvan */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* Espacio entre logos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners__logo {
+    max-width: 100px;
+    /* Tamaño máximo del logo para móvil */
+    height: auto;
+    filter: brightness(0) invert(1);
+    /* Si los logos son de color y quieres que se vean blancos */
+    opacity: 0.8;
+    /* Ligeramente transparentes */
+    transition: opacity 0.3s ease;
+}
+
+.partners__logo:hover {
+    opacity: 1;
+    /* Opacidad completa al hover */
+}
+
+
+/* --- SECCIÓN SOME FACTS (Mobile-First) --- */
+.facts {
+    background-image: url('assets/general_images/background_3.png');
+    /* Fondo de la sección */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: var(--dark-bg);
+    /* Fallback */
+    color: var(--text-light);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+.facts__list {
+    display: flex;
+    flex-direction: column;
+    /* Apilar en móvil */
+    gap: 30px;
+    /* Espacio entre hechos */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.facts__fact {
+    background-color: var(--card-bg);
+    /* Fondo de la tarjeta de hecho */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.facts__fact:hover {
+    transform: translateY(-5px);
+    /* Pequeño levantamiento */
+    background-color: #4a4a4a;
+    /* Ligero cambio de color al hover */
+}
+
+.facts__fact-number {
+    font-size: 3em;
+    /* Tamaño grande para el número */
+    font-weight: bold;
+    color: var(--primary-orange);
+    /* Naranja */
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
+    /* Espacio para la línea */
+}
+
+.facts__fact-number::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    /* Ancho de la línea debajo del número */
+    height: 2px;
+    background-color: var(--primary-orange);
+}
+
+.facts__fact-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.facts__fact-description {
+    font-size: 0.85em;
+    color: var(--text-medium);
+    text-transform: capitalize;
+    /* "Donec tincidunt cursus" capitalizado */
+}
+
+
+/* --- MEDIA QUERIES (Mobile-First) --- */
+
+/* Tabletas y Escritorio pequeño (768px y más) */
+@media (min-width: 768px) {
+
+    /* General */
+    .section-title {
+        font-size: 2.8em;
+    }
+
+    .section-subtitle {
+        font-size: 1em;
+    }
+
+    /* Team Section */
+    .team {
+        padding: 80px 30px;
+    }
+
+    .team__list {
+        flex-direction: row;
+        /* Dispocisión en fila */
+        flex-wrap: wrap;
+        /* Permite que se envuelvan */
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .team__member {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 columnas */
+        max-width: calc(50% - 20px);
+        /* Para asegurar el gap */
+    }
+
+    .team__photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Partners Section */
+    .partners {
+        padding: 50px 30px;
+    }
+
+    .partners__logo {
+        max-width: 120px;
+    }
+
+    /* Facts Section */
+    .facts {
+        padding: 80px 30px;
+    }
+
+    .facts__list {
+        flex-direction: row;
+        /* Dispocisión en 2 columnas */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .facts__fact {
+        flex: 1 1 calc(50% - 15px);
+        /* 2 columnas */
+        max-width: calc(50% - 15px);
+        padding: 40px 25px;
+    }
+
+    .facts__fact-number {
+        font-size: 3.5em;
+    }
+}
+
+/* Escritorio (992px y más) */
+@media (min-width: 992px) {
+
+    /* General */
+    .section-title {
+        font-size: 3.5em;
+    }
+
+    .section-subtitle {
+        font-size: 1.1em;
+    }
+
+    /* Team Section */
+    .team {
+        padding: 100px 40px 130px 40px;
+    }
+
+    .team__list {
+        flex-wrap: nowrap;
+        /* No envuelvas, 3 columnas */
+        gap: 50px;
+        position: relative;
+        /* Para los puntos de navegación */
+    }
+
+    .team__member {
+        flex: 1 1 250px;
+        /* Ancho base para 3 columnas */
+        max-width: 300px;
+        /* Ancho máximo para mantenerlos compactos */
+    }
+
+    .team__photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Puntos de navegación para carrusel (simulación estática) */
+    .team__list::after {
+        content: '\2022 \2022 \2022';
+        /* Tres puntos */
+        display: block;
+        color: var(--primary-orange);
+        font-size: 2em;
+        position: absolute;
+        bottom: -40px;
+        /* Posiciona debajo de la lista */
+        left: 50%;
+        transform: translateX(-50%);
+        letter-spacing: 10px;
+        /* Espacio entre puntos */
+    }
+
+    /* Partners Section */
+    .partners {
+        padding: 60px 40px;
+    }
+
+    .partners__list {
+        gap: 40px;
+    }
+
+    .partners__logo {
+        max-width: 150px;
+        /* Logos más grandes en desktop */
+    }
+
+    /* Facts Section */
+    .facts {
+        padding: 100px 40px;
+    }
+
+    .facts__list {
+        flex-direction: row;
+        /* 4 columnas */
+        flex-wrap: nowrap;
+        gap: 30px;
+    }
+
+    .facts__fact {
+        flex: 1 1 200px;
+        /* Ancho base para 4 columnas */
+        max-width: calc(25% - 22.5px);
+        /* 4 columnas con espacio */
+        padding: 30px 30px;
+    }
+
+    .facts__fact-number {
+        font-size: 4em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Variables CSS */
+:root {
+    --color-dark-grey: #333;
+    --color-light-grey: #ccc;
+    --color-orange-start: #f29a3a;
+    --color-orange-end: #e67e22;
+    --color-text-light: #fff;
+    --font-family-montserrat: 'Montserrat', sans-serif;
+}
+
+/* Reset básico y estilos generales */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-montserrat);
+    line-height: 1.6;
+    color: var(--color-text-light);
+    background-color: var(--color-dark-grey); /* Fondo por si la imagen no carga */
+}
+
+/* Sección Contacto */
+.contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Asegura que ocupe al menos toda la altura de la vista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/general_images/map.jpg'); /* Asegúrate de tener esta imagen en la misma carpeta */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Esto es importante para que la imagen de fondo cubra todo */
+    background-attachment: fixed; /* Opcional: para que la imagen no se mueva al scrollear */
+}
+
+.contact__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+.contact__container {
+    position: relative; /* Para que esté sobre el overlay */
+    z-index: 2;
+    max-width: 90%; /* Ancho máximo en móviles */
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ocupa el 100% del max-width */
+}
+
+.contact__main-title {
+    font-size: 2.2rem; /* Tamaño para móviles */
+    color: var(--color-text-light);
+    font-weight: 700;
+    margin-bottom: 0.5rem; /* Espacio entre el título principal y el subtítulo */
+    letter-spacing: 0.15rem; /* Pequeño espaciado para el look de la imagen */
+}
+
+.contact__subtitle {
+    font-size: 0.9rem; /* Tamaño más pequeño para el subtítulo */
+    color: var(--color-orange-start);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 2rem; /* Espacio debajo del subtítulo */
+    letter-spacing: 0.1rem;
+}
+
+.contact__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre los grupos de campos */
+}
+
+.contact__group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact__field-wrapper {
+    flex: 1; /* Para que ocupen el espacio disponible en la fila */
+}
+
+.contact__label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-orange-start);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-light-grey);
+    padding: 0.5rem 0;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    border-color: var(--color-orange-start);
+}
+
+.contact__textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 4rem; /* Altura mínima para el área de mensaje */
+}
+
+.contact__button {
+    background: linear-gradient(to right, var(--color-orange-start), var(--color-orange-end));
+    color: var(--color-text-light);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    margin-top: 1rem; /* Espacio sobre el botón */
+}
+
+.contact__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries para diseño responsive (Desktop first ahora aplicado a mobile-first) */
+@media (min-width: 768px) {
+    .contact__container {
+        max-width: 600px; /* Ancho más grande para tablets */
+        padding: 3rem 2.5rem;
+    }
+
+    .contact__main-title {
+        font-size: 3rem;
+    }
+
+    .contact__subtitle {
+        font-size: 1.1rem;
+    }
+
+    .contact__group--name-email {
+        flex-direction: row; /* Pone Nombre y Email en la misma fila */
+        gap: 2rem; /* Espacio entre ellos */
+    }
+
+    .contact__button {
+        padding: 1.2rem 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact__container {
+        max-width: 750px; /* Ancho más grande para desktops */
+        padding: 4rem 3rem;
+    }
+}
+
+/* Asegurarse de que la imagen de fondo esté en la ruta correcta */
+/* Por ejemplo, si tienes una carpeta 'assets' y dentro 'images', la ruta sería './assets/images/map-background.png' */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #1a1a1a; /* Dark background as in the image */
+            color: #ccc; /* Light gray text color */
+            font-family: Arial, sans-serif;
+            padding: 20px; /* Overall padding for the footer */
+            display: flex;
+            flex-direction: column; /* Stack sections vertically on mobile */
+            gap: 40px; /* Space between sections */
+            align-items: center; /* Center items horizontally on mobile */
+        }
+
+        .footer-section {
+            width: 100%; /* Take full width on mobile */
+            max-width: 350px; /* Max width for sections on mobile */
+            text-align: center; /* Center text for mobile */
+        }
+
+        .footer-section h3 {
+            color: #eee;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50px; /* Orange line width */
+            height: 2px;
+            background-color: #e69138; /* Orange color */
+        }
+
+        .footer-section h3 span {
+            display: block;
+            font-size: 0.7em;
+            color: #e69138;
+            margin-top: 5px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        /* About Us Section */
+        .about-us p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Social Media Section */
+        .social-media h3::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .social-media-icons {
+            display: flex;
+            justify-content: center; /* Center icons on mobile */
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-media-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333; /* Darker background for icons */
+            color: #fff;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-media-icons a:hover {
+            background-color: #e69138; /* Orange on hover */
+        }
+
+        .social-media-icon{
+            width: 1.4rem;
+        }
+
+
+
+        /* Subscribe Section */
+        .subscribe-form {
+            background-color: #2a2a2a; /* Slightly lighter background for the form area */
+            padding: 30px 20px;
+            border-radius: 5px;
+            max-width: 350px; /* Match max-width of other sections */
+            width: 100%;
+        }
+
+        .subscribe-form h3 {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .subscribe-form h3::after {
+            display: none; /* Remove line under subscribe heading */
+        }
+
+        .subscribe-form input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #555;
+            background-color: #1a1a1a;
+            color: #eee;
+            font-size: 1em;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .subscribe-form input[type="email"]::placeholder {
+            color: #888;
+        }
+
+        .subscribe-form button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(to bottom, #e69138, #d47e2a); /* Orange gradient button */
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .subscribe-form button:hover {
+            opacity: 0.9;
+        }
+
+        /* Desktop Styles (Media Query) */
+        @media (min-width: 768px) {
+            footer {
+                flex-direction: row; /* Arrange sections horizontally */
+                justify-content: space-around; /* Distribute space evenly */
+                align-items: flex-start; /* Align sections to the top */
+                padding: 50px; /* More padding for desktop */
+            }
+
+            .footer-section {
+                width: 30%; /* Allocate width for each section */
+                max-width: 400px; /* Allow sections to be wider */
+                text-align: left; /* Align text to the left on desktop */
+            }
+
+            .footer-section h3::after {
+                left: 0; /* Align line to the left for desktop */
+                transform: translateX(0);
+            }
+
+            .social-media-icons {
+                justify-content: flex-start; /* Align icons to the left */
+            }
+
+            .subscribe-form {
+                margin-left: auto; /* Push the form to the right */
+            }
+        }

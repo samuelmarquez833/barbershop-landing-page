@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barber Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="normalize.css">
+  <!-- Aquí puedes añadir Google Fonts si ya sabes la tipografía -->
+</head>
+<body>
+
+<header class="header">
+  <nav class="header__nav">
+    <div class="header__logo">
+      <a href="#" class="header__logo-link"><img class="header__logo-image" src="assets/logos_images/main_logo.png" alt=""></a>
+    </div>
+
+
+    <button class="header__toggle" aria-label="Toggle navigation">
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+      <span class="header__toggle-line"></span>
+    </button>
+
+    <ul class="header__nav-list">
+      <li class="header__nav-item"><a href="#home" class="header__nav-link">Home</a></li>
+      <li class="header__nav-item"><a href="#about" class="header__nav-link">About Us</a></li>
+      <li class="header__nav-item"><a href="#services" class="header__nav-link">Services</a></li>
+      <li class="header__nav-item"><a href="#projects" class="header__nav-link">Our Projects</a></li>
+      <li class="header__nav-item"><a href="#team" class="header__nav-link">Our Team</a></li>
+      <li class="header__nav-item"><a href="#clients" class="header__nav-link">Happy Clients</a></li>
+      <li class="header__nav-item"><a href="#price" class="header__nav-link">Price</a></li>
+      <li class="header__nav-item"><a href="#facts" class="header__nav-link">Some Facts</a></li>
+      <li class="header__nav-item header__nav-item--highlight"> <a href="#contact" class="header__nav-link">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+
+
+  <main class="main">
+    <section class="hero" id="home">
+        <div class="hero__overlay">
+
+        </div> <!-- Capa de superposición para oscurecer la imagen de fondo -->
+        <div class="hero__content">
+            <img src="assets/logos_images/mustache.png" alt="Icono de Bigote" class="hero__icon-image">
+            <h1 class="hero__title">ELEVATE YOUR LOOK WITH THE <br> <span class="hero__highlight-text">PERFECT BEARD</span> </h1>
+            <p class="hero__subtitle">CALL US: +12 345 6789</p>
+            <button class="default__button">Learn more about us</button>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about__header">
+        <h2 class="about__title">About us</h2>
+        <p class="about__subtitle">Who we are</p>
+      </div>
+      <div class="about__cards">
+        <div class="about__card">
+          <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione dolorum asperiores ex. Vero, perferendis magnam dolorem mollitia iusto repudiandae expedita id aperiam earum saepe placeat ducimus nesciunt? Ab, voluptates unde?</p>
+          <button class="default__button">Learn More</button>
+        </div>
+        <div class="about__card about__card--image">
+          <img src="assets/general_images/aboutImage.png" alt="Team member 2" class="about__image">
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="services__header">
+        <h2 class="services__title">
+          <i class="fa-solid fa-mustache"></i> OUR SERVICES
+        </h2>
+        <p class="services__subtitle">WHAT WE DO</p>
+      </div>
+
+      <div class="services__list">
+        <div class="services__card">
+          <img class="service__image" src="assets/logos_images/barbershop.png" alt="">
+          <h3 class="services__card-title">HIGH QUALITY BARBER</h3>
+          <p class="services__card-description">DONEC TINCIDUNT CURSUS</p>
+        </div>
+        <div class="services__card">
+          <img class="service__image" src="assets/logos_images/barber_chair.png" alt="">
+          <h3 class="services__card-title">HIGH QUALITY BARBER</h3>
+          <p class="services__card-description">DONEC TINCIDUNT CURSUS</p>
+        </div>
+        <div class="services__card">
+          <img class="service__image" src="assets/logos_images/barber_brush.png" alt="">
+          <h3 class="services__card-title">HIGH QUALITY BARBER</h3>
+          <p class="services__card-description">DONEC TINCIDUNT CURSUS</p>
+        </div>
+        <div class="services__card">
+          <img class="service__image" src="assets/logos_images/straight_razor.png" alt="">
+          <h3 class="services__card-title">HIGH QUALITY BARBER</h3>
+          <p class="services__card-description">DONEC TINCIDUNT CURSUS</p>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+<section class="team" id="team">
+<div class="team__header">
+<h2 class="team__title">Our Team</h2>
+<p class="team__subtitle">Meet the Experts</p>
+</div>
+
+
+<div class="team__list">
+<div class="team__member">
+<img src="assets/team_images/team_member_1.png" alt="Team member 1" class="team__photo">
+<h3 class="team__name">Fred Simons</h3>
+<p class="team__role">Senior Barber</p>
+</div>
+
+
+<div class="team__member">
+<img src="assets/team_images/team_member_2.png" alt="Team member 2" class="team__photo">
+<h3 class="team__name">Joseph Smith</h3>
+<p class="team__role">Stylist</p>
+</div>
+
+
+<div class="team__member">
+<img src="assets/team_images/team_member_3.png" alt="Team member 3" class="team__photo">
+<h3 class="team__name">Will Becker</h3>
+<p class="team__role">Fade Specialist</p>
+</div>
+</div>
+</section>
+
+
+
+
+<section class="partners" id="partners">
+<div class="partners__list">
+<img src="assets/logos_images/sponsor_1.png" alt="Brand 1" class="partners__logo">
+<img src="assets/logos_images/sponsor_2.png" alt="Brand 2" class="partners__logo">
+<img src="assets/logos_images/sponsor_1.png" alt="Brand 3" class="partners__logo">
+<img src="assets/logos_images/sponsor_2.png" alt="Brand 4" class="partners__logo">
+<img src="assets/logos_images/sponsor_1.png" alt="Brand 3" class="partners__logo">
+</div>
+</section>
+
+
+
+
+<section class="facts" id="facts">
+<div class="facts__header">
+<h2 class="facts__title">SOME FACTS</h2>
+<p class="facts__subtitle">SOMEONE NUMBERS</p>
+</div>
+
+
+<div class="facts__list">
+<div class="facts__fact">
+<div class="facts__fact-number">1000</div>
+<div class="facts__fact-title"> DESIGN PROJECTS<br>RELEASED</div>
+<div class="facts__fact-description">Donec tincidunt cursus</div>
+</div>
+
+
+<div class="facts__fact">
+<div class="facts__fact-number">900</div>
+<div class="facts__fact-title"> PHOTOS</div>
+<div class="facts__fact-description">Morbi ex felis, tincidunt sed hendrerit</div>
+</div>
+
+
+<div class="facts__fact">
+<div class="facts__fact-number">500</div>
+<div class="facts__fact-title">MARKETING IDEAS</div>
+<div class="facts__fact-description">Donec tincidunt cursus</div>
+</div>
+
+
+<div class="facts__fact">
+<div class="facts__fact-number">100</div>
+<div class="facts__fact-title"> Exhibitions</div>
+<div class="facts__fact-description">Morbi ex felis, tincidunt sed</div>
+</div>
+</div>
+</section>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="contact">
+        <div class="contact__overlay"></div>
+        <div class="contact__container">
+            <h2 class="contact__main-title">CONTACT US</h2>
+            <p class="contact__subtitle">CONTACT US</p>
+
+            <form class="contact__form">
+                <div class="contact__group contact__group--name-email">
+                    <div class="contact__field-wrapper">
+                        <label for="name" class="contact__label">NAME</label>
+                        <input type="text" id="name" name="name" class="contact__input">
+                    </div>
+                    <div class="contact__field-wrapper">
+                        <label for="email" class="contact__label">EMAIL</label>
+                        <input type="email" id="email" name="email" class="contact__input">
+                    </div>
+                </div>
+
+                <div class="contact__group">
+                    <label for="subject" class="contact__label">SUBJECT</label>
+                    <input type="text" id="subject" name="subject" class="contact__input">
+                </div>
+
+                <div class="contact__group">
+                    <label for="message" class="contact__label">MESSAGE</label>
+                    <textarea id="message" name="message" class="contact__textarea"></textarea>
+                </div>
+
+                <button type="submit" class="contact__button">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+        <div class="footer-section about-us">
+            <h3>About Us <span>ABOUT US</span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel eros vitae erat condimentum viverra a nec lacus. Maecenas eros lectus, rhoncus vel dictum vel, dignissim eget ligula. Vestibulum id tempus quam, sed pellentesque quam. Vestibulum porta aliquet risus</p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>Social Media <span>SHARE IN YOUR NETWORKS</span></h3>
+            <div class="social-media-icons">
+                <a href="#"><img class="social-media-icon" src="assets/logos_images/ig_logo.webp" alt=""></a>
+                <a href="#"><img class="social-media-icon" src="assets/logos_images/tiktok_logo.png" alt=""></a>
+                <a href="#"><img class="social-media-icon" src="assets/logos_images/whatsapp_logo.png" alt=""></a>
+            </div>
+        </div>
+
+        <div class="footer-section subscribe-form">
+            <h3>Email to Subscribe</h3>
+            <form action="#" method="post">
+                <input type="email" placeholder="EMAIL TO SUBSCRIBE" name="email" required>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
